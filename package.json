@@ -1,0 +1,36 @@
+{
+  "name": "church-multitrack",
+  "productName": "Church Multitrack",
+  "version": "0.1.0",
+  "description": "Background music player for church services, driven by MIDI cues from Proclaim.",
+  "main": "src/main.js",
+  "private": true,
+  "scripts": {
+    "start": "electron .",
+    "test": "node --test",
+    "dist": "electron-builder --win --publish never"
+  },
+  "build": {
+    "appId": "com.theministerat.churchmultitrack",
+    "productName": "Church Multitrack",
+    "files": [
+      "src/**",
+      "ui/**",
+      "package.json"
+    ],
+    "win": {
+      "target": "nsis"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
+    }
+  },
+  "dependencies": {
+    "ws": "^8.22.0"
+  },
+  "devDependencies": {
+    "electron": "^44.7.0",
+    "electron-builder": "^26.15.3"
+  }
+}
